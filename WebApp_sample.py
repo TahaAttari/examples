@@ -119,32 +119,33 @@ def call_lazada(action = None, limit = None, offset = None, method = 'GET', kwar
 
     return json.loads(result_json.content)
 
-def HTML_table_from_list_of_dicts(list_of_dicts, keys_list = None):
-    try:
-        if not keys_list:
-            keys_list = list_of_dicts[0].keys()
-        table = "<table><thead>"
-        for table_heading in keys_list:
-            table += "<th>" + table_heading + "</th>"    
-        table += "</thead><tbody>"    
-        for each_dict in list_of_dicts:
-            row_out = "<tr>"
-            for column_name in keys_list:
-                if not each_dict.get(column_name):
-                    row_out += "<td>Header Incorrect</td>"
-                if isinstance(each_dict[column_name],dict):
-                    row_out += "<td>" + ",".join(each_dict[column_name].values()) + "</td>"
-                elif not each_dict[column_name]:
+def HTML_table_from_list_of_dicts(list_of_dicts, args = None):
+    if args:
+        keys_list = args
+    else:
+        keys_list = list_of_dicts[0].keys()
+    table = "<table><thead>"
+    for table_heading in keys_list:
+        table += "<th>" + table_heading + "</th>"    
+    table += "</thead><tbody>"    
+    for each_dict in list_of_dicts:
+        row_out = "<tr>"
+        for column_name in keys_list:
+            try:
+                if not each_dict[column_name]:
                     row_out += "<td> None </td>"
+                elif isinstance(each_dict[column_name],dict):
+                    row_out += "<td>" + ",".join(each_dict[column_name].values()) + "</td>"
+                elif isinstance(each_dict[column_name],list):
+                    row_out += "<td>" + ",".join(each_dict[column_name]) + "</td>"
                 else:
                     row_out += "<td>" + str(each_dict[column_name]) + "</td>"
-            row_out += "</tr>"
-            table += row_out
-        table += "</tbody></table>"    
-        return table
-    except:
-        traceback.print_exc()
-        return 'Error, please contact Webmaster or check input'
+            except KeyError:
+                row_out += "<td> Header Incorrect </td>"
+        row_out += "</tr>"
+        table += row_out
+    table += "</tbody></table>"    
+    return table
 
 def update_prods(spider = 'lazada',prodList = []):
     if not prodList:
