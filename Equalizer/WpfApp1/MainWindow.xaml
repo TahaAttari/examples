@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Equalizer" Height="479.285" Width="856.518">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="Output" Height="168" Margin="25,96,24,0" TextWrapping="Wrap" Text="Ready&#xD;&#xA;" VerticalAlignment="Top" SpellCheck.IsEnabled="True" IsReadOnlyCaretVisible="True" FontSize="10"/>
+        <Button x:Name="StartButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="800" Margin="25,269,0,0" Height="26" Content="Start" Click="StartButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Height="60" Margin="25,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="800" FontSize="14"><Run Text="1) Press Start"/><LineBreak/><Run Text="2) Select folder containing images"/><LineBreak/><Run Text="3) When &quot;Done!&quot; message appears you can close"/></TextBlock>
+        <TextBox x:Name="CLAHEgridsize" HorizontalAlignment="Left" Height="20" Margin="186,310,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top" Width="61"/>
+        <TextBox x:Name="BLURgridsize" HorizontalAlignment="Left" Height="19" Margin="186,343,0,0" TextWrapping="Wrap" Text="9" VerticalAlignment="Top" Width="61"/>
+        <TextBox x:Name="clip_limit" HorizontalAlignment="Left" Height="21" Margin="760,341,0,0" TextWrapping="Wrap" Text="2.0" VerticalAlignment="Top" Width="65"/>
+        <TextBox x:Name="maskFactor" HorizontalAlignment="Left" Height="21" Margin="760,310,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="65"/>
+        <Label HorizontalAlignment="Left" Height="29" Margin="25,310,0,0" Content="CLAHE Grid Size (px)" VerticalAlignment="Top" Width="156"/>
+        <Label HorizontalAlignment="Left" Height="27" Margin="25,339,0,0" Content="Gaussian Blur Grid Size (px)" VerticalAlignment="Top" Width="156"/>
+        <Label HorizontalAlignment="Left" Height="29" Margin="284,337,0,0" Content="CLAHE Clip Limit" VerticalAlignment="Top" Width="137"/>
+        <Label HorizontalAlignment="Left" Height="25" Margin="284,310,0,0" Content="Unsharp Mask Factor [original image] / [blurred image]" VerticalAlignment="Top" Width="471"/>
+        <TextBox x:Name="blurSigma" HorizontalAlignment="Left" Height="21" Margin="760,374,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="65"/>
+        <Label HorizontalAlignment="Left" Height="26" Margin="284,369,0,0" Content="Gaussian Blur Radius (Sigma)" VerticalAlignment="Top" Width="454"/>
+        <TextBox x:Name="exportQuality" HorizontalAlignment="Left" Height="21" Margin="186,373,0,0" TextWrapping="Wrap" Text="90" VerticalAlignment="Top" Width="61"/>
+        <Label Content="Export Quality (jpg)" HorizontalAlignment="Left" Height="26" Margin="25,369,0,0" VerticalAlignment="Top" Width="147"/>
+        <CheckBox x:Name="SmartSharpen" Content="Use smart sharpening? (reduces noise but also textural details, keep on for landscapes, off for macros/textures)" HorizontalAlignment="Left" Height="21" Margin="25,400,0,0" VerticalAlignment="Top" Width="800" IsChecked="True"/>
+
+    </Grid>
+</Window>
