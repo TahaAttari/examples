@@ -15,5 +15,5 @@ This is a simple image processing app I created to help me with my design work. 
 Adaptive Histogram Equalization and Unsharp Masking from OpenCV to enhance images. I use it primarily for  
 batch processing of photos to be used as design assets.
 
-To try without building download Equalizer>Wpfapp1>bin>Equalizer.zip, extract to location of choice and  
+To try without building download Equalizer>WpfApp1>bin>Equalizer.zip, extract to location of choice and  
 run Equalizer.exe from extracted folder.
