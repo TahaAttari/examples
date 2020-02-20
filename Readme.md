@@ -11,9 +11,11 @@ There are a few bit of code, no whole programs from commercial work due to NDAs.
 
 **Equalizer (C#)**
 
-This is a simple image processing app I created to help me with my design work. It uses Contrast-Limited  
-Adaptive Histogram Equalization and Unsharp Masking from OpenCV to enhance images. I use it primarily for  
+This is a simple image processing app I created to help me with my design work. It uses Contrast-Limited Adaptive Histogram Equalization and Unsharp Masking from OpenCV to enhance images. I use it primarily for  
 batch processing of photos to be used as design assets.
 
-To try without building download Equalizer>WpfApp1>bin>Equalizer.zip, extract to location of choice and  
-run Equalizer.exe from extracted folder.
+To try without building the application, download the file Equalizer.zip at 
+
+Equalizer > WpfApp1 > bin > Equalizer.zip
+
+Extract to location of choice and run Equalizer.exe from the extracted folder.
