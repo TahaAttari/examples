@@ -3,11 +3,11 @@ Examples!
 
 Welcome to my repository of code samples. If you have any questions or wish to contact me feel free.
 
-##Commercial
+## Commercial
 
 There are a few bit of code, no whole programs from commercial work due to NDAs.
 
-##Personal
+## Personal
 
 **Equalizer (C#)**
 
