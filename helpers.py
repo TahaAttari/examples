@@ -29,7 +29,7 @@ def HTML_table_from_list_of_dicts(list_of_dicts, args = None):
         table += row_out
     table += "</tbody></table>"    
     return table
-
+# send an API request to Lazada, an ecommerce marketplace
 def call_lazada(action = None, limit = None, offset = None, method = 'GET', kwargs = None):
     # I know I could have passed **kwargs but considering I controlled the input
     # it seemed superfluous
