@@ -24,6 +24,7 @@ class OurProds(ndb.Model):
 # use the default bucket
 GCS_BUCKET = 'GAE-Project-Name.appspot.com'
 
+# return a HTML template with a list of orders downloaded via API request
 @app.route('/orders_table', methods = ['GET', 'POST'])
 def return_orders_table(no_template = False):
     prodList = []
@@ -84,7 +85,7 @@ def return_orders_table(no_template = False):
                             content = content,
                             title = "Orders")
 
-
+# given a list of products update the noSQL database of products
 @app.route('/update_prods', methods = ['GET'])
 def update_prods(spider = 'lazada',prodList = []):
     if not prodList:
